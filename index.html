@@ -18,13 +18,13 @@
   </head>
   <body ng-app="MyApp" ng-controller="MyCtrl">
 
-    <button class="btn" ng-click="open()">Open Widget</button>
+    <button class="btn btn-primary center-block" ng-click="open()">Open Widget</button>
 
     <div modal="showModal" close="cancel()">
       
 	  <div class="modal-content">
     <span class="close" ng-click="cancel()">&times;</span>
-	<form name="_form" class="form-horizontal" >
+	<form name="myform" ngmodel="myform" class="form-horizontal" novalidate >
 		<div class="modal-header">
 			<h3>Widget Settings</h3>
 		</div>
@@ -34,7 +34,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Name</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="formname" class="form-control">
+								<input name="myname" ng-model="myname" class="form-control myinput" required/>
 							</div>
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Type</label>
 							<div class="col-lg-8 col-md-8">
-								<select id="selectcharttype" name="type" ng-model="selectedchart" ng-options="x for x in options" class="form-control">
+								<select id="selectcharttype" name="type" ng-model="selectedchart" ng-options="x for x in options" class="form-control myinput">
 									
 
 								</select>
@@ -55,7 +55,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Width</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="sizeX" id="width" ng-model="form.sizeX" class="form-control ">
+								<input name="sizeX" id="mywidth" type="number"" ng-model="mywidth" class="form-control">
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Height</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="sizeY" id="height" ng-model="form.sizeY" class="form-control ">
+								<input name="sizeY" id="myheight" type="number" ng-model="form.sizeY" class="form-control ">
 							</div>
 						</div>
 					</div>
@@ -73,7 +73,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Column</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="col" ng-model="form.col" class="form-control ">
+								<input name="col" ng-model="form.col" class="form-control myinput ">
 							</div>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Row</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="row" class="form-control ">
+								<input name="row" class="form-control myinput">
 							</div>
 						</div>
 					</div>
@@ -95,7 +95,7 @@
 		<div class="modal-footer">
 			<a class="btn btn-danger pull-left" ng-click="cancel()" style="margin-top: 10px;" ><i class="glyphicon glyphicon-trash"></i> Delete</a>
 			<a class="btn btn-default" ng-click="cancel()" tabindex="-1"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
-			<button id="modalsave" type="button" ng-click="mysubmit()" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"></i> Save</button>
+			<button id="modalsave" type="submit" ng-click="mysubmit()" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"></i> Save</button>
 		</div>
 
 	</form>

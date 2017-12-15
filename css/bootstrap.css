@@ -29,6 +29,7 @@ video {
   *zoom: 1;
 }
 
+
 audio:not([controls]) {
   display: none;
 }
@@ -5944,4 +5945,7 @@ a.badge:hover {
 
 .affix {
   position: fixed;
+}
+#myheight,#mywidth{
+  height: 35px;
 }

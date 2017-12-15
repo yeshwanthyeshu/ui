@@ -9,13 +9,14 @@ app.controller("MyCtrl", function($scope) {
   $scope.ok = function() {
     $scope.showModal = false;
   };
-
+  $scope.myname='';
   $scope.cancel = function() {
     $scope.showModal = false;
   };
 	$scope.options = ['line','bar','pie'];
 	
   $scope.mysubmit = function () {
+
 
     if(this.selectedchart == "line"){
       $scope.chart = c3.generate({
@@ -62,8 +63,17 @@ if(this.selectedchart == "pie"){
 });
 
 } 
-  this.cancel();
-  };
+
+  
+  if(this.myname != '' && this.selectedchart !='none'){
+    console.log("not emppty");
+    this.cancel();
+  }else{
+    console.log("empty");
+  }
+
+};
+
  
 
 
