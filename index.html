@@ -19,12 +19,14 @@
   <body ng-app="MyApp" ng-controller="MyCtrl">
 
     <button class="btn btn-primary center-block" ng-click="open()">Open Widget</button>
-
+	<div id="tabs">
+		Space for tabs
+	</div>
     <div modal="showModal" close="cancel()">
       
 	  <div class="modal-content">
     <span class="close" ng-click="cancel()">&times;</span>
-	<form name="myform" ngmodel="myform" class="form-horizontal" novalidate >
+	<form id="myform" name="myform" ngmodel="myform" class="form-horizontal" novalidate >
 		<div class="modal-header">
 			<h3>Widget Settings</h3>
 		</div>
@@ -55,7 +57,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Width</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="sizeX" id="mywidth" type="number"" ng-model="mywidth" class="form-control">
+								<input name="sizeX" id="mywidth" type="number" ng-model="mywidth" class="form-control"/>
 							</div>
 						</div>
 					</div>
@@ -63,7 +65,7 @@
 						<div class="form-group">
 							<label class="control-label col-lg-4 col-md-4">Height</label>
 							<div class="col-lg-8 col-md-8">
-								<input name="sizeY" id="myheight" type="number" ng-model="form.sizeY" class="form-control ">
+								<input name="sizeY" id="myheight" type="number" ng-model="myheight" class="form-control ">
 							</div>
 						</div>
 					</div>
@@ -94,7 +96,7 @@
 		
 		<div class="modal-footer">
 			<a class="btn btn-danger pull-left" ng-click="cancel()" style="margin-top: 10px;" ><i class="glyphicon glyphicon-trash"></i> Delete</a>
-			<a class="btn btn-default" ng-click="cancel()" tabindex="-1"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+			<a class="btn btn-default" ng-click="clear()" tabindex="-1"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
 			<button id="modalsave" type="submit" ng-click="mysubmit()" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"></i> Save</button>
 		</div>
 
@@ -104,8 +106,7 @@
 
   </div>
 </div>
-{{selectedchart}}
-<div id="chart"></div>
+<div id="chart" style="height:{{myheight}};width:{{mywidth}};"></div>
 
 
   </body>
